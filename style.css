@@ -17,6 +17,12 @@
   height: 100%;
 }
 
+.bbWrapper{
+    margin: 0 auto;
+    width: 960px;
+    height: 300%;
+}
+
 .menu {
   float: right;
   width: 70%;

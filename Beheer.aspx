@@ -5,18 +5,37 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
-</head>
+    <title>Code Panda - TVS</title>
+		<link href="style.css" rel = stylesheet />
+		<link href="http://vvn.nl/sites/all/themes/vvn/favicon.ico" rel="shortcut icon">  
+		<meta name="description" content="Code Panda - TVS">
+		<meta name="author" content="Code Panda - www.codepanda.nl">
+		<meta charset="UTF-8">
+		<script language="javascript" src="javascript/jquery.js"></script>
+	</head>
 <body style= "background-color: #6699FF;">
 
     <form id="form1" runat="server">
-        <p><asp:Button ID="btnLogOut" runat="server" Text="Uitloggen" OnClick="btnLogOut_Click" /> <br />
+        <div class="header">
+			<div class="wrapper">
+				<a href="index.aspx"><img src="img\header.png"></img></a>
+				<ul class="menu">
+					<li><a href="login.aspx">Login</a></li>
+					<li><a href="Reparatie.aspx">Reparatie</a></li>
+					<li><a href="Schoonmaak.aspx">Schoonmaak</a></li>
+					<li><a href="Beheer.aspx">Home</a></li>
+				</ul>
+			</div>
+		</div>
+        <!--<p><asp:Button ID="btnLogOut" runat="server" Text="Uitloggen" OnClick="btnLogOut_Click" /> <br />
             <asp:Label ID="lblCurrentlyLoggedIn" runat="server" Text="nootjes"></asp:Label>
         </p>
         <p><asp:Button ID="btnToRepa" runat="server" Text="Reparatiesysteem" OnClick="btnToRepa_Click" /></p>
-        <p><asp:Button ID="btnToService" runat="server" Text="Schoonmaaksysteem" OnClick="btnToService_Click" /></p>
-    <h1>T
-        ram Beheer Systeem</h1>
+        <p><asp:Button ID="btnToService" runat="server" Text="Schoonmaaksysteem" OnClick="btnToService_Click" /></p>-->
+    <div class="wrapper">
+			<div class="container">
+        
+        <h1>Tram Beheer Systeem</h1>
     <div>
         <h2>(Ver)Plaatsen/ Verwijderen:</h2>
         <p>
@@ -165,6 +184,8 @@
         <div style="float: left; width: 150px; background-color: #6699FF;">
         <asp:Panel ID="p21" runat="server"></asp:Panel>
     </div>
+    </div>
+                </div>
     </div>
     </form>
 </body>

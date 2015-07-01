@@ -15,12 +15,12 @@
 	<body>
 		<form id="form1" runat="server">
 		<div class="header">
-			<div class="wrapper">
+			<div class="wrapper" aria-disabled="True">
 				<a href="index.aspx"><img src="img\header.png"></img></a>
 				<ul class="menu">
 					<li><a href="login.aspx">Login</a></li>
-					<li><a href="reparatie.aspx">Reparatie</a></li>
-					<li><a href="schoonmaak.aspx">Schoonmaak</a></li>
+					<li><a href="">Reparatie</a></li>
+					<li><a href="">Schoonmaak</a></li>
 					<li><a href="Beheer.aspx">Home</a></li>
 				</ul>
 			</div>

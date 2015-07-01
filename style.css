@@ -1,0 +1,132 @@
+﻿body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #F7F7F7; }
+
+.header {
+  background-color: #0099BF;
+  min-width: 962px;
+  width: 100%;
+  height: 50px;
+  margin: 0px;
+  margin-bottom: 20px; }
+
+.wrapper {
+  margin: 0 auto;
+  width: 960px;
+  height: 100%;
+}
+
+.menu {
+  float: right;
+  width: 70%;
+  margin-top: 6px;
+  margin-bottom: 7px; }
+
+.menu li {
+  float: right;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  float: right;
+  min-width: 0; }
+
+.menu a:link, .menu a:visited {
+  display: block;
+  width: 100px;
+  color: #FFFFFF;
+  background-color: #0099BF;
+  font-family: Calibri;
+  border-radius: 1em;
+  padding: 4px;
+  margin: 5px;
+  text-align: center;
+  text-decoration: none; }
+
+.menu a:hover, .menu a:active {
+  background-color: #20BCE3; }
+
+.container {
+  border-radius: 1em;
+  border: 1px;
+  border-style: solid;
+  border-color: #EEEEEE;
+  background-color: #FFFFFF;
+  width: 100%;
+  min-height: 640px; }
+
+.indexcontainer {
+  border-radius: 1em;
+  border: 1px;
+  border-style: solid;
+  border-color: #EEEEEE;
+  background-color: #FFFFFF;
+  width: 100%;
+  min-height: 500px; }
+
+.loginForm {
+    background-color: #A0A0A0;
+    margin-top: 200px;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
+/*Plaatsen van de buttons, panels etc.*/
+#tbTramNrClean{
+    margin-left: 5px;
+}
+#ddlStatusClean{
+    margin-left:17px;
+}
+#btAdjustCln{
+    margin-left: 25px;
+}
+.panelCln {
+    margin-top:10px;
+}
+#pnlClean{
+    background-color: white;
+}
+#tbTramNrRep{
+    margin-left: 5px;
+}
+#ddlStatusRep{
+    margin-left:17px;
+}
+#tbTijdRep{
+    margin-left:64px;
+}
+.PanelRep {
+    margin-top: 10px;
+}
+#cbPlaceSector{
+    margin-left: 48px;
+}
+.PanelIndex{
+    margin-left:200px;
+}
+.PanelIndexBtns{
+    max-width: 200px;
+    padding: 5px;
+    float: left;
+}
+/*Tables*/
+.track{
+    margin: 5px;
+    width: 50px;
+    font-size: 10pt;
+    float: left;
+}
+
+.track td {
+    height: 16px;
+}
+tr.even, td.even{
+    background-color: #efefef;
+}
+
+
+
+/*# sourceMappingURL=style.css.map */
+
+/*# sourceMappingURL=style.css.map */

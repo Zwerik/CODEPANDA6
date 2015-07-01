@@ -52,6 +52,7 @@ using System.Web;
         public Repair GetRepair(int repairid)
         {
             Repair repair = null;
+            repair = database.LoadRepair(repairid);
             return repair;
         }
 

@@ -39,7 +39,7 @@ public partial class Reparatie : System.Web.UI.Page
         {
             foreach (User user in service.Users)
             {
-                ddlUserRep.Items.Add(user.Username);
+                ddlUserRep.Items.Add(user.Name);
             }
         }
     }
@@ -55,15 +55,36 @@ public partial class Reparatie : System.Web.UI.Page
             string description = tbDescrRep.Text;
             foreach (User u in service.Users)
             {
-                if (u.Username == ddlUserRep.SelectedItem.Text)
+                if (u.Name == ddlUserRep.SelectedItem.Text)
                 {
                     user = u;
+                    break;
                 }
             }
 
             selectedRepair = new Repair(0, date, " - ", tram, user, estimate, description);
 
             service.InsertRepair(selectedRepair);
+        }
+        else
+        {
+            int repairId = selectedRepair.Id;
+            DateTime date = ClDateRep.SelectedDate;
+            DateTime estimate = ClDateDoneRep.SelectedDate;
+            Tram tram = service.GetTram(Convert.ToInt32(tbTramNrRep.Text));
+            User user = null;
+            string description = tbDescrRep.Text;
+            foreach (User u in service.Users)
+            {
+                if (u.Name == ddlUserRep.SelectedItem.Text)
+                {
+                    user = u;
+                    break;
+                }
+            }
+
+            selectedRepair = new Repair(repairId, date, " - ", tram, user, estimate, description);
+            service.UpdateRepair(selectedRepair);
         }
     }
 }

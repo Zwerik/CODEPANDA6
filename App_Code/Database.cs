@@ -105,7 +105,7 @@ using System.Data;
         /// </summary>
         public List<User> GetUsers()
         {
-            string sql = "SELECT * FROM \"Medewerker\"";
+            string sql = "SELECT * FROM MEDEWERKER";
             OracleCommand command = new OracleCommand(sql, conn);
 
             List<User> users = new List<User>();
@@ -129,7 +129,7 @@ using System.Data;
                 {
                     id = Convert.ToInt32(reader["Id"]);
                     name = Convert.ToString(reader["Naam"]);
-                    name = Convert.ToString(reader["Gebruikersnaam"]);
+                    username = Convert.ToString(reader["Gebruikersnaam"]);
                     password = Convert.ToString(reader["Wachtwoord"]);
 
                     user = new User(id, name, username, password);
@@ -204,7 +204,7 @@ using System.Data;
         /// </summary>
         public Tram GetTram(int tramId)
         {
-            string sql = "SELECT \"Nummer\" FROM \"TRAM\" WHERE \"ID\" = :id";
+            string sql = "SELECT \"Nummer\" FROM TRAM WHERE \"ID\" = :id";
             OracleCommand command = new OracleCommand(sql, conn);
 
             command.Parameters.Add(new OracleParameter("id", tramId));
@@ -252,7 +252,7 @@ using System.Data;
         /// </summary>
         public Tram GetTramId(int tramNr)
         {
-            string sql = "SELECT \"ID\" FROM \"TRAM\" WHERE \"Nummer\" = :id";
+            string sql = "SELECT \"ID\" FROM TRAM WHERE \"Nummer\" = :id";
             OracleCommand command = new OracleCommand(sql, conn);
 
             command.Parameters.Add(new OracleParameter("id", tramNr));
@@ -272,7 +272,7 @@ using System.Data;
 
                 while (reader.Read())
                 {
-                    tramNr = Convert.ToInt32(reader["ID"]);
+                    tramId = Convert.ToInt32(reader["ID"]);
                 }
                 reader.Close();
             }
@@ -295,7 +295,7 @@ using System.Data;
 
         public List<Clean> LoadClean()
         {
-            string sql = "SELECT * FROM \"TRAM_ONDERHOUD\" WHERE \"TypeOnderhoud\" = 'SCHOONMAAK'";
+            string sql = "SELECT * FROM TRAM_ONDERHOUD WHERE \"TypeOnderhoud\" = 'SCHOONMAAK'";
             OracleCommand command = new OracleCommand(sql, conn);
 
             List<Clean> cleans = new List<Clean>();
@@ -354,7 +354,7 @@ using System.Data;
 
         public List<Repair> LoadRepair()
         {
-            string sql = "SELECT * FROM \"TRAM_ONDERHOUD\" WHERE \"TypeOnderhoud\" = 'REPARATIE'";
+            string sql = "SELECT * FROM TRAM_ONDERHOUD WHERE \"TypeOnderhoud\" = 'REPARATIE'";
             OracleCommand command = new OracleCommand(sql, conn);
 
             List<Repair> repairs = new List<Repair>();
@@ -418,7 +418,7 @@ using System.Data;
 
         public Repair LoadRepair(int repairId)
         {
-            string sql = "SELECT * FROM \"TRAM_ONDERHOUD\" WHERE \"TypeOnderhoud\" = 'REPARATIE' AND \"Id\" = :id";
+            string sql = "SELECT * FROM TRAM_ONDERHOUD WHERE \"TypeOnderhoud\" = 'REPARATIE' AND \"Id\" = :id";
             OracleCommand command = new OracleCommand(sql, conn);
 
             command.Parameters.Add("id", repairId);
@@ -476,7 +476,7 @@ using System.Data;
 
         public void InsertClean(Clean clean)
         {
-            string sql = "INSERT INTO \"TRAM_ONDERHOUD\"(\"Medewerker_Id\", \"Tram_Id\", \"DatumTijdstip\", \"TypeOnderhoud\") VALUES (:userid, :tramid, :datetime, 'SCHOONMAAK')";
+            string sql = "INSERT INTO TRAM_ONDERHOUD(\"Medewerker_Id\", \"Tram_Id\", \"DatumTijdstip\", \"TypeOnderhoud\") VALUES (:userid, :tramid, :datetime, 'SCHOONMAAK')";
             OracleCommand command = new OracleCommand(sql, conn);
 
             command.Parameters.Add("userid", clean.User.Id);
@@ -488,7 +488,7 @@ using System.Data;
 
         public void InsertRepair(Repair repair)
         {
-            string sql = "INSERT INTO \"TRAM_ONDERHOUD\"(\"Medewerker_Id\", \"Tram_Id\", \"DatumTijdstip\", \"BeschikbaarDatum\", \"TypeOnderhoud\", \"Beschrijving\") VALUES (:userid, :tramid, :datetime, :estimate, 'REPARATIE', :description)";
+            string sql = "INSERT INTO TRAM_ONDERHOUD(\"Medewerker_ID\", \"Tram_ID\", \"DatumTijdstip\", \"BeschikbaarDatum\", \"TypeOnderhoud\", \"Beschrijving\") VALUES (:userid, :tramid, :datetime, :estimate, 'REPARATIE', :description)";
             OracleCommand command = new OracleCommand(sql, conn);
 
             command.Parameters.Add("userid", repair.User.Id);
@@ -502,7 +502,7 @@ using System.Data;
 
         public void RemoveClean(Clean clean)
         {
-            string sql = "DELETE FROM \"TRAM_ONDERHOUD\" WHERE \"ID\" = :id)";
+            string sql = "DELETE FROM TRAM_ONDERHOUD WHERE \"ID\" = :id)";
             OracleCommand command = new OracleCommand(sql, conn);
 
             command.Parameters.Add("id", clean.Id);
@@ -512,7 +512,7 @@ using System.Data;
 
         public void RemoveRepair(Repair repair)
         {
-            string sql = "DELETE FROM \"TRAM_ONDERHOUD\" WHERE \"ID\" = :id)";
+            string sql = "DELETE FROM TRAM_ONDERHOUD WHERE \"ID\" = :id)";
             OracleCommand command = new OracleCommand(sql, conn);
 
             command.Parameters.Add("id", repair.Id);
@@ -535,7 +535,7 @@ using System.Data;
 
         public void UpdateRepair(Repair repair)
         {
-            string sql = "UPDATE \"TRAM_ONDERHOUD\" SET \"Medewerker_ID\" = :userid, \"Tram_Id\" = :tramid, \"DatumTijdstip\" = :date, \"BeschikbaarDatum\" = :estimate, \"Beschrijving\" = :description WHERE \"ID\" = :id";
+            string sql = "UPDATE TRAM_ONDERHOUD SET \"Medewerker_ID\" = :userid, \"Tram_Id\" = :tramid, \"DatumTijdstip\" = :date, \"BeschikbaarDatum\" = :estimate, \"Beschrijving\" = :description WHERE \"ID\" = :id";
             OracleCommand command = new OracleCommand(sql, conn);
 
             command.Parameters.Add("id", repair.Id);

@@ -65,12 +65,7 @@ public class PanelControl
             lblspaceholder.Text = " ";
             Panel_.Controls.Add(lblspaceholder);*/
         }
-
-        void GetInfo_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+    
         public void AddTrack(Track trck)
         {
             Track_ = trck;

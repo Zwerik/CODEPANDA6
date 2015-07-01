@@ -154,7 +154,7 @@ using System.Data;
         /// Retrieves the User from the database with the same username as the input.
         /// Returns a null user if the user was not found
         /// </summary>
-        public User GetUser(string username)
+        /*public User GetUser(string username)
         {
             string sql = "SELECT * FROM \"Medewerker\" WHERE \"Gebruikersnaam\" = :username";
             OracleCommand command = new OracleCommand(sql, conn);
@@ -195,7 +195,7 @@ using System.Data;
 
             user = new User(id, name, username, password);
             return user;
-        }
+        }*/
 
         /// <summary>
         /// Name: GetTram

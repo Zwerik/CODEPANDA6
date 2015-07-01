@@ -27,13 +27,5 @@ using System.Web;
         #endregion
         #region public methods
 
-        //<summary>
-        // Name: SendMail
-        // This method tells the SMTP server to send an e-mail to the members of the crew
-        //</summary>
-        public void SendMail()
-        {
-            //TODO: implementation
-        }
         #endregion
     }

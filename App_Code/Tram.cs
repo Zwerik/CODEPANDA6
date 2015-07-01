@@ -17,17 +17,7 @@ public class Tram
         this.Id = id;
         this.TramNr = tramNr;
     }
-
-    public void AddDriver(User driver)
-    {
-        this.Driver = driver;
-    }
-
-    public void AddReservation(Reservation reservation)
-    {
-        this.Reservation = reservation;
-    }
-
+    
     public void ChangeStatus(Status status)
     {
         this.Status = status;

@@ -40,7 +40,7 @@ public class DBManager
     {
         OracleCommand cmd = new OracleCommand(query, Connection);
         OracleDataReader ODReader = cmd.ExecuteReader();
-        Connection.Close();
+        //Connection.Close();
         return ODReader;
     }
     //Executes a stored procedure on the database
